@@ -6,13 +6,14 @@ import Mercedes from './assets/images/Mercedes.png'
 import porsche from './assets/images/porsche.png'
 import rolls from './assets/images/rolls.jpeg'
 import volvo from './assets/images/volvo.png'
+
 export const CARDIMAGES = [
-    { "src": audi },
-    { "src": bmw },
-    { "src": ferrari },
-    { "src": lamborghini },
-    { "src": Mercedes },
-    { "src": porsche },
-    { "src": rolls },
-    { "src": volvo },
+    { "src": audi, matched: false },
+    { "src": bmw, matched: false },
+    { "src": ferrari, matched: false },
+    { "src": lamborghini, matched: false },
+    { "src": Mercedes, matched: false },
+    { "src": porsche, matched: false },
+    { "src": rolls, matched: false },
+    { "src": volvo, matched: false },
 ];
