@@ -12,9 +12,10 @@ button {
   cursor: pointer;
   font-size: 1em;
 }
-button:hover {
-  background: #c23866;
-  color: #fff;
+.restart:hover {
+  background-color: orange;
+  color: black;
+  border-color: black;
 }
 button {
   background: none;
