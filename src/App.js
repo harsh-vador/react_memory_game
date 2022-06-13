@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import { CARDIMAGES } from "./constants";
+import Card from './components/Card';
 
 function App() {
+  const [cards, setCards] = useState([]);
+  const [turns, setTurns] = useState(0);
+  const shuffleCards = () => {
+    const shuffledCards = [...CARDIMAGES, ...CARDIMAGES]
+      .sort(() => Math.random() - 0.5)
+      .map((card) => ({ ...card, id: Math.random() }));
+    setCards(shuffledCards);
+    setTurns(0);
+  };
+  console.log(cards, turns);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <h1>Memory Game</h1>
+      <button onClick={shuffleCards}>Game</button>
+      <div className="card-grid">
+        {cards.map(card => (
+          <Card key={card.id} card={card} />
+        ))}
+      </div>
+    </div >
   );
 }
 
